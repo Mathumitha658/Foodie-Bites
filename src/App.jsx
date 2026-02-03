@@ -9,7 +9,6 @@ import Header from './Header';
 import About from './About';
 import Meals from './Meals';
 import Veg from './Veg';
-import NonVeg from './Nonveg';
 import SpecialCombo from './SpecialCombo';
 import Register from './Register';
 import Login from './Login';
@@ -18,6 +17,8 @@ import TrendingRecipes from './TrendingRecipes';
 import Cart from './Cart';
 import Order from './Order';
 import ConfirmOrder from './Confirmorder';
+import NonVeg from './NonVeg';
+
 
 
 
@@ -38,7 +39,7 @@ function App() {
          <Route path="/about" element={<About/>} />
           <Route path="/meals" element={<Meals/>} />
             <Route path="/meals/veg" element={<Veg/>} />
-              <Route path="/meals/nonveg" element={<NonVeg/>} />
+                 <Route path="/meals/nonveg" element={<NonVeg/>} />
          <Route path="/meals/special" element={<SpecialCombo/>} />
               <Route path="/trending" element={<TrendingRecipes/>} />
                   <Route path="/cart" element={<Cart/>} />
