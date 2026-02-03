@@ -16,8 +16,8 @@ import Layout from './Layout';
 import TrendingRecipes from './TrendingRecipes';
 import Cart from './Cart';
 import Order from './Order';
-import ConfirmOrder from './Confirmorder';
 import NonVeg from './NonVeg';
+import Confirmorder from './Confirmorder';
 
 
 
@@ -44,7 +44,7 @@ function App() {
               <Route path="/trending" element={<TrendingRecipes/>} />
                   <Route path="/cart" element={<Cart/>} />
                     <Route path="/order" element={<Order/>} />
-                      <Route path="/confirm" element={<ConfirmOrder/>} />
+                      <Route path="/confirm" element={<Confirmorder/>} />
                   
          </Route>
          

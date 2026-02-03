@@ -111,14 +111,18 @@
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  background: linear-gradient(90deg, #ffd700, #d4af37);
-  color: #3d2616;
+  background: linear-gradient(90deg, #d2d1c8, #f3edd9);
+
+  color: #e4e1de;
 }
 
 .qty-box span {
+  color: #ffd700 !important;   /* GOLD – clearly visible */
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
+
+
 
 .nonveg-actions {
   display: flex;

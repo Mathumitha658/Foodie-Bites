@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Confirmorder.css";
 
 const Confirmorder = () => {
   const [order, setOrder] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const data = JSON.parse(
-      localStorage.getItem("Confirmedorder")
-    );
-    setOrder(data);
-  }, []);
+    const data = JSON.parse(localStorage.getItem("confirmedOrder")); // fixed key
+    if (data) {
+      setOrder(data);
+    } else {
+      navigate("/"); // redirect if no order found
+    }
+  }, [navigate]);
 
   if (!order) {
-    return <h2>No order found</h2>;
+    return <h2>Loading...</h2>; // temporary while redirect happens
   }
 
   return (

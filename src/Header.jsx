@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navBtn = {
@@ -14,6 +12,13 @@ const Header = () => {
     fontSize: "16px",
     cursor: "pointer",
     textDecoration: "none"
+  };
+
+  const scrollToFooter = () => {
+    const footer = document.getElementById("footer");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" }); // smooth scrolling
+    }
   };
 
   return (
@@ -34,7 +39,15 @@ const Header = () => {
       }}
     >
       {/* Logo */}
-      <Link to="/" style={{ color: "#fff", fontSize: "26px", fontWeight: "700", textDecoration: "none" }}>
+      <Link
+        to="/"
+        style={{
+          color: "#fff",
+          fontSize: "26px",
+          fontWeight: "700",
+          textDecoration: "none"
+        }}
+      >
         Foodie Bites
       </Link>
 
@@ -44,9 +57,7 @@ const Header = () => {
 
         {/* Menu Dropdown */}
         <div style={{ position: "relative" }}>
-          <button style={navBtn} onClick={() => setMenuOpen(!menuOpen)}>
-            Menu ▼
-          </button>
+          <button style={navBtn} onClick={() => setMenuOpen(!menuOpen)}>Menu ▼</button>
 
           {menuOpen && (
             <ul
@@ -64,58 +75,45 @@ const Header = () => {
                 zIndex: 1000
               }}
             >
-        {[
-    { name: "Meals", path: "/meals" },
-    { name: "Trending Recipes", path: "/trending" },
-    { name: "Desserts", path: "/desserts" },
-    { name: "Quick Bites", path: "/quick-bites" },
-    { name: "Chicken Mania", path: "/chicken-mania" }
-  ].map((item, i) => (
-    <Link
-      key={i}
-      to={item.path}
-      style={{ textDecoration: "none" }}
-    >
-      <li
-        style={{
-          padding: "10px 20px",
-          cursor: "pointer",
-          color: "#6b3e1d",
-          fontWeight: "500"
-        }}
-        onMouseEnter={(e) =>
-          (e.target.style.backgroundColor = "#f2d9b3")
-        }
-        onMouseLeave={(e) =>
-          (e.target.style.backgroundColor = "transparent")
-        }
-      >
-        {item.name}
-      </li>
-    </Link>
-  ))}
-</ul>
+              {[
+                { name: "Meals", path: "/meals" },
+                { name: "Trending Recipes", path: "/trending" },
+                { name: "Desserts", path: "/desserts" },
+                { name: "Quick Bites", path: "/quick-bites" },
+                { name: "Chicken Mania", path: "/chicken-mania" }
+              ].map((item, i) => (
+                <Link key={i} to={item.path} style={{ textDecoration: "none" }}>
+                  <li
+                    style={{
+                      padding: "10px 20px",
+                      cursor: "pointer",
+                      color: "#6b3e1d",
+                      fontWeight: "500"
+                    }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#f2d9b3")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
+                  >
+                    {item.name}
+                  </li>
+                </Link>
+              ))}
+            </ul>
           )}
         </div>
 
         <Link to="/order" style={navBtn}>Order</Link>
-        <Link to="/contact" style={navBtn}>Contact</Link>
+
+        {/* Contact button scrolls to footer */}
+        <button style={navBtn} onClick={scrollToFooter}>
+          Contact
+        </button>
       </div>
 
       {/* Right Buttons */}
       <div style={{ display: "flex", gap: "12px" }}>
-        <Link to="/login" className="btn bg-white rounded-pill px-4 text-warning">
-          Login
-        </Link>
-        <Link to="/register" className="btn bg-white rounded-pill px-4 text-warning">
-          Register
-        </Link>
-<button
-  className="btn btn-outline-light rounded-circle"
-  onClick={() => navigate("/cart")}
->
-  🛒
-</button>
+        <Link to="/login" className="btn bg-white rounded-pill px-4 text-warning">Login</Link>
+        <Link to="/register" className="btn bg-white rounded-pill px-4 text-warning">Register</Link>
+        <button className="btn btn-outline-light rounded-circle" onClick={() => navigate("/cart")}>🛒</button>
       </div>
     </header>
   );

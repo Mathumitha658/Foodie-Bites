@@ -4,19 +4,45 @@ import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Login Successful!");
-     navigate("/");
+
+    // 🔍 Get registered user
+    const storedUser = localStorage.getItem("user");
+
+    // 🚫 BLOCK LOGIN IF NOT REGISTERED
+    if (!storedUser) {
+      alert("Please register first!");
+      navigate("/register");
+      return;
+    }
+
+    const user = JSON.parse(storedUser);
+
+    // ✅ Validate login
+    if (
+      formData.email === user.email &&
+      formData.password === user.password
+    ) {
+      alert("Login Successful!");
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/");
+    } else {
+      alert("Invalid Email or Password");
+    }
   };
 
   return (
@@ -33,6 +59,7 @@ const Login = () => {
             name="email"
             placeholder="Email Address"
             required
+            value={formData.email}
             onChange={handleChange}
           />
 
@@ -41,6 +68,7 @@ const Login = () => {
             name="password"
             placeholder="Password"
             required
+            value={formData.password}
             onChange={handleChange}
           />
 

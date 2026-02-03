@@ -4,6 +4,7 @@ import "./Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,13 +13,33 @@ const Register = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // 🔐 Password check
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    // ✅ Save registered user
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      })
+    );
+
     alert("Registered Successfully!");
-    navigate("/login"); // auto go to login
+    navigate("/login");
   };
 
   return (
