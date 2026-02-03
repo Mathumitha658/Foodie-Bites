@@ -1,0 +1,79 @@
+.veg-container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2b1b0f, #3d2616);
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.veg-title {
+  font-size: 2.8rem;
+ color: #ffd700;
+  margin-bottom: 40px;
+}
+
+.veg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.veg-card {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  padding: 20px;
+  transition: 0.4s ease;
+}
+
+.veg-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+}
+
+.veg-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.veg-card h3 {
+  margin: 15px 0 8px;
+  color: #ffd700;
+}
+
+.veg-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5deb3;
+}
+
+.qty-box {
+  margin: 12px 0;
+}
+
+.qty-box input {
+  width: 60px;
+  padding: 5px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.order-btn {
+  margin-top: 12px;
+  padding: 10px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  color: #3d2616;
+  transition: 0.3s ease;
+}
+
+.order-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #e6c200, #b8962e);
+}

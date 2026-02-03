@@ -1,0 +1,111 @@
+.meals-container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2b1b0f, #3d2616);
+  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+}
+
+.meals-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #d4af37;
+  animation: fadeDown 1s ease;
+}
+
+.meals-subtitle {
+  color: #f5deb3;
+  margin-bottom: 40px;
+  animation: fadeUp 1.2s ease;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.meal-card {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  padding: 30px 20px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: zoomIn 0.8s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.meal-card h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.meal-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.meal-card ul li {
+  padding: 6px 0;
+  color: #fdf5e6;
+  font-size: 0.95rem;
+}
+
+.meal-btn {
+  padding: 10px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #3d2616;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  transition: all 0.3s ease;
+}
+
+.meal-btn:hover {
+
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+

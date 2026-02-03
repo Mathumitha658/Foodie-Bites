@@ -1,0 +1,70 @@
+.cart-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.empty-cart {
+  text-align: center;
+  color: gray;
+}
+
+/* Card */
+.cart-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  gap: 20px;
+}
+
+/* Image */
+.cart-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Details */
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h3 {
+  margin-bottom: 6px;
+}
+
+/* Buttons */
+.cart-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Small Order Button */
+.order-btn.small {
+  padding: 6px 14px;
+  font-size: 14px;
+  background-color: #f4c400;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Small Remove Button */
+.remove-btn.small {
+  padding: 6px 14px;
+  font-size: 14px;
+  background-color: #c62828;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

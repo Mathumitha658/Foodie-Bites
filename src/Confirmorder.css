@@ -1,0 +1,14 @@
+.confirm-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.confirm-card {
+  margin-top: 30px;
+}
+
+.confirm-card img {
+  width: 200px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}

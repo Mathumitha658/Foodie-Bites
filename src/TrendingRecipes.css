@@ -1,0 +1,146 @@
+.trending-container {
+  padding: 60px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff7e6, #fbe7b2);
+  text-align: center;
+}
+
+.trending-title {
+  font-size: 2.8rem;
+  color: #b8962e;
+  margin-bottom: 8px;
+}
+
+.trending-subtitle {
+  color: #6b4e16;
+  margin-bottom: 45px;
+}
+
+/* 🔥 3 images per row */
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .trending-grid {  
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .trending-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trending-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+  transition: 0.4s ease;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.trending-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.trending-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.trending-card h3 {
+  margin: 16px 0 8px;
+  color: #5c3a00;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #b8860b;
+}
+
+.order-btn {
+  margin-top: 14px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  color: #4a2c00;
+  transition: 0.3s ease;
+}
+
+.order-btn:hover {
+  transform: scale(1.06);
+  background: linear-gradient(90deg, #e6c200, #b8962e);
+}
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0;
+}
+
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  color: #4a2c00;
+}
+
+.qty-box span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5c3a00;
+}
+
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.trending-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.cart-btn {
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 2px solid #d4af37;
+  background: transparent;
+  color: #d4af37;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+  background: #d4af37;
+  color: #3d2616;
+}
