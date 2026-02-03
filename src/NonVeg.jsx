@@ -23,7 +23,7 @@ const nonVegMeals = [
   }
 ];
 
-const Nonveg = () => {
+const NonVeg = () => {
   const navigate = useNavigate();
 
   // 🔢 Quantity state
@@ -125,4 +125,4 @@ const Nonveg = () => {
   );
 };
 
-export default Nonveg;
+export default NonVeg;

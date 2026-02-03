@@ -1,6 +1,6 @@
 import About from "./About";
 import Meals from "./Meals";
-import NonVeg from "./Nonveg";
+import NonVeg from "./NonVeg";
 import SpecialCombo from "./SpecialCombo";
 import TrendingRecipes from "./TrendingRecipes";
 import Veg from "./Veg";
@@ -85,7 +85,7 @@ const Home = () => {
     <About/>
     <Meals/>
     <Veg/>
-    <Nonveg/>
+    <NonVeg/>
     <SpecialCombo/>
     <TrendingRecipes/>
     </>
