@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./ConfirmOrder.css";
+import "./Confirmorder.css";
 
-const ConfirmOrder = () => {
+const Confirmorder = () => {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
     const data = JSON.parse(
-      localStorage.getItem("confirmedOrder")
+      localStorage.getItem("Confirmedorder")
     );
     setOrder(data);
   }, []);
@@ -29,4 +29,4 @@ const ConfirmOrder = () => {
   );
 };
 
-export default ConfirmOrder;
+export default Confirmorder;
