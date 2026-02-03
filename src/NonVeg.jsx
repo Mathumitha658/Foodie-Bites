@@ -23,7 +23,7 @@ const nonVegMeals = [
   }
 ];
 
-const NonVeg = () => {
+const Nonveg = () => {
   const navigate = useNavigate();
 
   // 🔢 Quantity state
@@ -115,7 +115,7 @@ const NonVeg = () => {
                 className="order-btn"
                 onClick={() => handleOrder(meal)}
               >
-                Order Now
+                Order Now  
               </button>
             </div>
           </div>
@@ -125,4 +125,4 @@ const NonVeg = () => {
   );
 };
 
-export default NonVeg;
+export default Nonveg;

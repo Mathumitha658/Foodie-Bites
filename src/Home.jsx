@@ -85,7 +85,7 @@ const Home = () => {
     <About/>
     <Meals/>
     <Veg/>
-    <NonVeg/>
+    <Nonveg/>
     <SpecialCombo/>
     <TrendingRecipes/>
     </>

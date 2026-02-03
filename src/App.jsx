@@ -17,7 +17,7 @@ import TrendingRecipes from './TrendingRecipes';
 import Cart from './Cart';
 import Order from './Order';
 import ConfirmOrder from './Confirmorder';
-import NonVeg from './NonVeg';
+import NonVeg from './Nonveg';
 
 
 
