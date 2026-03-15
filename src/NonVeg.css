@@ -4,13 +4,16 @@
   min-height: 100vh;
   color: #ffffff;
   text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .nonveg-title {
   font-size: 2.9rem;
-    color: #ffd700;
+  color: #ffd700;
   margin-bottom: 45px;
   letter-spacing: 1px;
+  word-break: break-word;
 }
 
 .nonveg-grid {
@@ -25,6 +28,8 @@
   border-radius: 22px;
   padding: 26px;
   transition: all 0.4s ease;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .nonveg-card:hover {
@@ -32,13 +37,14 @@
   box-shadow: 0 18px 40px rgba(212, 175, 55, 0.45);
 }
 
-/* 🔥 Image size increased */
 .nonveg-card img {
   width: 100%;
-  height: 240px;              /* increased height */
+  max-width: 100%;
+  height: 240px;
   object-fit: cover;
   border-radius: 18px;
   transition: transform 0.4s ease;
+  display: block;
 }
 
 .nonveg-card:hover img {
@@ -48,7 +54,7 @@
 .nonveg-card h3 {
   margin: 18px 0 10px;
   color: #ffd700;
-  font-size: 1.25rem;
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .nonveg-price {
@@ -59,11 +65,12 @@
 }
 
 .qty-box {
-  margin: 14px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
+  margin: 12px 0;
+  flex-wrap: wrap;
 }
 
 .qty-box label {
@@ -76,6 +83,26 @@
   border-radius: 8px;
   border: none;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #d2d1c8, #f3edd9);
+  color: #e4e1de;
+  flex-shrink: 0;
+}
+
+.qty-box span {
+  color: #ffd700 !important;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .order-btn {
@@ -95,40 +122,13 @@
   transform: scale(1.08);
   background: linear-gradient(90deg, #e6c200, #b8962e);
 }
-.qty-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin: 12px 0;
-}
-
-.qty-box button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(90deg, #d2d1c8, #f3edd9);
-
-  color: #e4e1de;
-}
-
-.qty-box span {
-  color: #ffd700 !important;   /* GOLD – clearly visible */
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-
 
 .nonveg-actions {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin-top: 14px;
+  flex-wrap: wrap;
 }
 
 .cart-btn {
@@ -145,4 +145,54 @@
 .cart-btn:hover {
   background: #d4af37;
   color: #3d2616;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nonveg-title {
+    font-size: 2rem;
+  }
+
+  .nonveg-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .nonveg-card {
+    padding: 18px;
+  }
+
+  .nonveg-card img {
+    height: 200px;
+  }
+
+  .nonveg-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .order-btn,
+  .cart-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nonveg-container {
+    padding: 40px 15px;
+  }
+
+  .nonveg-title {
+    font-size: 1.6rem;
+  }
+
+  .nonveg-price {
+    font-size: 1rem;
+  }
+
+  .nonveg-card img {
+    height: 170px;
+  }
 }

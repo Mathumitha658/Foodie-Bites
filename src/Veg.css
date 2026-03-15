@@ -4,12 +4,15 @@
   min-height: 100vh;
   color: #fff;
   text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .veg-title {
   font-size: 2.8rem;
- color: #ffd700;
+  color: #ffd700;
   margin-bottom: 40px;
+  word-break: break-word;
 }
 
 .veg-grid {
@@ -24,6 +27,8 @@
   border-radius: 18px;
   padding: 20px;
   transition: 0.4s ease;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .veg-card:hover {
@@ -36,11 +41,14 @@
   height: 180px;
   object-fit: cover;
   border-radius: 14px;
+  display: block;
+  max-width: 100%;
 }
 
 .veg-card h3 {
   margin: 15px 0 8px;
   color: #ffd700;
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .veg-price {
@@ -60,12 +68,12 @@
   border-radius: 8px;
   border: 2px solid #ffd700;
   background: #3d2616;
-  color: #ffd700;        /* 👈 NUMBER COLOR */
+  color: #ffd700;
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
+  box-sizing: border-box;
 }
-
 
 .order-btn {
   margin-top: 12px;
@@ -82,4 +90,42 @@
 .order-btn:hover {
   transform: scale(1.05);
   background: linear-gradient(90deg, #e6c200, #b8962e);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .veg-title {
+    font-size: 2rem;
+  }
+
+  .veg-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .veg-card {
+    padding: 15px;
+  }
+
+  .veg-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .veg-container {
+    padding: 40px 15px;
+  }
+
+  .veg-title {
+    font-size: 1.6rem;
+  }
+
+  .veg-price {
+    font-size: 1rem;
+  }
+
+  .qty-box input {
+    width: 50px;
+  }
 }

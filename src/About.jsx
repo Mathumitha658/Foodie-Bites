@@ -4,29 +4,23 @@ const About = () => {
   const points = [
     {
       title: "Quality You Can Taste",
-      text:
-      "At Foodie Bites, you’ll find quality food that exceeds your expectations. We use fresh ingredients, follow perfect recipes, and maintain hygienic cooking practices."
-
+      text: "At Foodie Bites, you'll find quality food that exceeds your expectations. We use fresh ingredients, follow perfect recipes, and maintain hygienic cooking practices."
     },
     {
       title: "Fresh Ingredients",
-      text:
-"We cook using daily fresh vegetables, premium meats, and hand-picked spices. Freshness is our biggest strength."
-   },
+      text: "We cook using daily fresh vegetables, premium meats, and hand-picked spices. Freshness is our biggest strength."
+    },
     {
       title: "Taste That Stands Out",
-      text:
-"We blend trending recipes with traditional flavors to create an unforgettable taste."
+      text: "We blend trending recipes with traditional flavors to create an unforgettable taste."
     },
     {
       title: "Clean & Hygienic",
-      text:
-"We give great importance to kitchen cleanliness, food safety, and hygiene standards."
-   },
+      text: "We give great importance to kitchen cleanliness, food safety, and hygiene standards."
+    },
     {
       title: "Fast & Reliable Service",
-      text:
-        " Quick preparation, safe packing, and on-time delivery — your food always reaches you fresh."
+      text: "Quick preparation, safe packing, and on-time delivery — your food always reaches you fresh."
     }
   ];
 
@@ -36,19 +30,22 @@ const About = () => {
         padding: "70px 20px",
         maxWidth: "1200px",
         margin: "auto",
-        fontFamily: "Poppins, Arial, sans-serif"
+        fontFamily: "Poppins, Arial, sans-serif",
+        overflowX: "hidden",
+        boxSizing: "border-box"
       }}
     >
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "60px" }}>
         <h1
           style={{
-            fontSize: "44px",
+            fontSize: "clamp(28px, 5vw, 44px)",
             fontWeight: "700",
             background: "linear-gradient(90deg, #b87333, #ffd700)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            animation: "fadeDown 1s ease"
+            animation: "fadeDown 1s ease",
+            wordBreak: "break-word"
           }}
         >
           ABOUT FOODIE BITES
@@ -68,7 +65,7 @@ const About = () => {
         }}
       >
         {/* Left Content */}
-        <div style={{ flex: "1.2", minWidth: "280px" }}>
+        <div style={{ flex: "1.2", minWidth: "280px", maxWidth: "100%" }}>
           {points.map((item, index) => (
             <div
               key={index}
@@ -79,13 +76,14 @@ const About = () => {
                 marginBottom: "30px",
                 boxShadow: "0 10px 25px rgba(184,115,51,0.15)",
                 borderLeft: "5px solid #b87333",
-                animation: "fadeUp 0.8s ease"
+                animation: "fadeUp 0.8s ease",
+                boxSizing: "border-box"
               }}
             >
-              <h2 style={{ marginBottom: "10px", color: "#333" }}>
+              <h2 style={{ marginBottom: "10px", color: "#333", fontSize: "clamp(18px, 3vw, 24px)" }}>
                 {item.title}
               </h2>
-              <p style={{ color: "#555", lineHeight: "1.8" }}>{item.text}</p>
+              <p style={{ color: "#555", lineHeight: "1.8", fontSize: "clamp(14px, 2vw, 16px)" }}>{item.text}</p>
             </div>
           ))}
         </div>
@@ -95,6 +93,7 @@ const About = () => {
           style={{
             flex: "1",
             minWidth: "280px",
+            maxWidth: "100%",
             position: "sticky",
             top: "120px"
           }}
@@ -104,8 +103,10 @@ const About = () => {
             alt="Foodie Bites"
             style={{
               width: "100%",
+              maxWidth: "100%",
               borderRadius: "20px",
-              boxShadow: "0 15px 30px rgba(0,0,0,0.25)"
+              boxShadow: "0 15px 30px rgba(0,0,0,0.25)",
+              display: "block"
             }}
           />
         </div>
@@ -133,6 +134,12 @@ const About = () => {
             to {
               opacity: 1;
               transform: translateY(0);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .about-sticky {
+              position: static !important;
             }
           }
         `}

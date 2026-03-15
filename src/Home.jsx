@@ -8,86 +8,146 @@ import Veg from "./Veg";
 const Home = () => {
   return (
     <>
-    <div
-      className="container-fluid d-flex align-items-center"
-      style={{
-        minHeight: "100vh",
-        marginTop: "90px",   // 👈 HEADER HEIGHT GAP
-        background: "linear-gradient(120deg, #fff3e6, #fde2c8)",
-      }}
-    >
-      <div className="row w-100 align-items-center px-5">
-        
-        {/* LEFT CONTENT */}
-        <div className="col-md-6">
-          <h1
-            style={{
-              fontSize: "48px",
-              fontWeight: "700",
-              color: "#7a3e1d",
-            }}
-          >
-            Delicious Food <br /> Delivered to You 🍽️
-          </h1>
+      <style>{`
+        .home-hero {
+          min-height: 100vh;
+          margin-top: 90px;
+          background: linear-gradient(120deg, #fff3e6, #fde2c8);
+          display: flex;
+          align-items: center;
+          overflow-x: hidden;
+        }
 
-          <p
-            style={{
-              fontSize: "18px",
-              color: "#5a3a1b",
-              marginTop: "20px",
-              lineHeight: "1.6",
-            }}
-          >
-            Enjoy mouth-watering dishes made with fresh ingredients.
-            Get exciting offers only on <b>Foodie Bites</b>.
-          </p>
+        .home-row {
+          width: 100%;
+          padding: 0 60px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+        }
 
-          <div className="d-flex gap-3 mt-4">
-            <button
-              className="btn"
-              style={{
-                backgroundColor: "#b87333",
-                color: "white",
-                padding: "10px 25px",
-                borderRadius: "25px",
-                fontWeight: "600",
-              }}
-            >
-              Order Now
-            </button>
+        .home-left {
+          flex: 1 1 300px;
+          padding: 20px 0;
+        }
 
-            <button
-              className="btn btn-outline-dark"
-              style={{
-                padding: "10px 25px",
-                borderRadius: "25px",
-              }}
-            >
-              View Menu
-            </button>
+        .home-left h1 {
+          font-size: 48px;
+          font-weight: 700;
+          color: #7a3e1d;
+        }
+
+        .home-left p {
+          font-size: 18px;
+          color: #5a3a1b;
+          margin-top: 20px;
+          line-height: 1.6;
+        }
+
+        .home-buttons {
+          display: flex;
+          gap: 12px;
+          margin-top: 24px;
+          flex-wrap: wrap;
+        }
+
+        .home-right {
+          flex: 1 1 300px;
+          text-align: center;
+          padding: 20px 0;
+        }
+
+        .home-right img {
+          width: 85%;
+          border-radius: 20px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+          max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          .home-hero {
+            margin-top: 0px;
+            min-height: auto;
+            padding: 30px 0;
+          }
+
+          .home-row {
+            padding: 0 20px;
+            flex-direction: column;
+          }
+
+          .home-left h1 {
+            font-size: 30px;
+          }
+
+          .home-left p {
+            font-size: 15px;
+          }
+
+          .home-right img {
+            width: 100%;
+            margin-top: 20px;
+          }
+        }
+      `}</style>
+
+      <div className="home-hero">
+        <div className="home-row">
+
+          {/* LEFT CONTENT */}
+          <div className="home-left">
+            <h1>
+              Delicious Food <br /> Delivered to You 🍽️
+            </h1>
+
+            <p>
+              Enjoy mouth-watering dishes made with fresh ingredients.
+              Get exciting offers only on <b>Foodie Bites</b>.
+            </p>
+
+            <div className="home-buttons">
+              <button
+                className="btn"
+                style={{
+                  backgroundColor: "#b87333",
+                  color: "white",
+                  padding: "10px 25px",
+                  borderRadius: "25px",
+                  fontWeight: "600",
+                }}
+              >
+                Order Now
+              </button>
+
+              <button
+                className="btn btn-outline-dark"
+                style={{
+                  padding: "10px 25px",
+                  borderRadius: "25px",
+                }}
+              >
+                View Menu
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="col-md-6 text-center">
-          <img
-            src="/wholefood.avif"
-            alt="Delicious Food"
-            style={{
-              width: "85%",
-              borderRadius: "20px",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
-            }}
-          />
+          {/* RIGHT IMAGE */}
+          <div className="home-right">
+            <img
+              src="/wholefood.avif"
+              alt="Delicious Food"
+            />
+          </div>
+
         </div>
       </div>
-    </div>
-    <About/>
-    <Meals/>
-    <Veg/>
-    <NonVeg/>
-    <SpecialCombo/>
-    <TrendingRecipes/>
+
+      <About />
+      <Meals />
+      <Veg />
+      <NonVeg />
+      <SpecialCombo />
+      <TrendingRecipes />
     </>
   );
 };

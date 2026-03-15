@@ -6,12 +6,17 @@
   background: linear-gradient(135deg, #2b1b0f, #3d2616);
   min-height: 100vh;
   color: #fff;
-}
-.comboo-title {
-  text-transform: uppercase;
-   color: #ffd700;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
+.comboo-title {
+  text-transform: uppercase;
+  color: #ffd700;
+  word-break: break-word;
+  text-align: center;
+}
 
 .combo-card {
   background: rgba(255, 215, 0, 0.09);
@@ -22,6 +27,7 @@
   width: 100%;
   text-align: center;
   transition: all 0.4s ease;
+  box-sizing: border-box;
 }
 
 .combo-card:hover {
@@ -42,12 +48,15 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  display: block;
+  max-width: 100%;
 }
 
 .combo-title {
   font-size: 1.5rem;
   color: #ffd700;
   margin-bottom: 6px;
+  word-break: break-word;
 }
 
 .combo-tagline {
@@ -67,8 +76,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 14px;
+  margin: 15px 0;
+  flex-wrap: wrap;
 }
 
 .qty-box input {
@@ -77,6 +87,25 @@
   border-radius: 8px;
   border: none;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.qty-box button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ffd700, #d4af37);
+  color: #3d2616;
+  flex-shrink: 0;
+}
+
+.qty-box span {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .order-btn {
@@ -95,36 +124,13 @@
   transform: scale(1.08);
   background: linear-gradient(90deg, #e6c200, #b8962e);
 }
-.qty-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin: 15px 0;
-}
-
-.qty-box button {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(90deg, #ffd700, #d4af37);
-  color: #3d2616;
-}
-
-.qty-box span {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
 
 .combo-actions {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-top: 18px;
+  flex-wrap: wrap;
 }
 
 .cart-btn {
@@ -141,4 +147,63 @@
 .cart-btn:hover {
   background: #d4af37;
   color: #3d2616;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .combo-container {
+    padding: 40px 15px;
+    align-items: flex-start;
+  }
+
+  .combo-card {
+    padding: 20px 15px;
+    max-width: 100%;
+  }
+
+  .carousel {
+    height: 200px;
+  }
+
+  .combo-title {
+    font-size: 1.2rem;
+  }
+
+  .combo-price {
+    font-size: 1.1rem;
+  }
+
+  .combo-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .order-btn,
+  .cart-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .combo-container {
+    padding: 30px 12px;
+  }
+
+  .carousel {
+    height: 170px;
+  }
+
+  .combo-title {
+    font-size: 1rem;
+  }
+
+  .combo-tagline {
+    font-size: 0.9rem;
+  }
+
+  .combo-price {
+    font-size: 1rem;
+  }
 }

@@ -3,12 +3,15 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #fff7e6, #fbe7b2);
   text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .trending-title {
   font-size: 2.8rem;
   color: #b8962e;
   margin-bottom: 8px;
+  word-break: break-word;
 }
 
 .trending-subtitle {
@@ -16,7 +19,7 @@
   margin-bottom: 45px;
 }
 
-/* 🔥 3 images per row */
+/* 3 images per row */
 .trending-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -25,14 +28,16 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .trending-grid {  
+  .trending-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (max-width: 600px) {
   .trending-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
@@ -44,6 +49,8 @@
   transition: 0.4s ease;
   animation: fadeUp 0.8s ease forwards;
   opacity: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .trending-card:hover {
@@ -52,14 +59,17 @@
 
 .trending-card img {
   width: 100%;
+  max-width: 100%;
   height: 230px;
   object-fit: cover;
   border-radius: 18px;
+  display: block;
 }
 
 .trending-card h3 {
   margin: 16px 0 8px;
   color: #5c3a00;
+  font-size: clamp(15px, 2.5vw, 20px);
 }
 
 .price {
@@ -84,12 +94,14 @@
   transform: scale(1.06);
   background: linear-gradient(90deg, #e6c200, #b8962e);
 }
+
 .qty-box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
   margin: 12px 0;
+  flex-wrap: wrap;
 }
 
 .qty-box button {
@@ -102,6 +114,7 @@
   cursor: pointer;
   background: linear-gradient(90deg, #ffd700, #d4af37);
   color: #4a2c00;
+  flex-shrink: 0;
 }
 
 .qty-box span {
@@ -110,23 +123,12 @@
   color: #5c3a00;
 }
 
-
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .trending-actions {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin-top: 12px;
+  flex-wrap: wrap;
 }
 
 .cart-btn {
@@ -143,4 +145,61 @@
 .cart-btn:hover {
   background: #d4af37;
   color: #3d2616;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .trending-title {
+    font-size: 2rem;
+  }
+
+  .trending-card {
+    padding: 15px;
+  }
+
+  .trending-card img {
+    height: 190px;
+  }
+
+  .trending-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .order-btn,
+  .cart-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trending-container {
+    padding: 40px 15px;
+  }
+
+  .trending-title {
+    font-size: 1.6rem;
+  }
+
+  .trending-card img {
+    height: 160px;
+  }
 }

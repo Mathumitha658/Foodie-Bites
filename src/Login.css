@@ -4,6 +4,9 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #fff6e5, #f5e1b8);
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .login-card {
@@ -15,11 +18,14 @@
   box-shadow: 0 20px 40px rgba(212, 175, 55, 0.35);
   text-align: center;
   animation: slideUp 1s ease;
+  box-sizing: border-box;
 }
 
 .login-card h1 {
   color: #c9a227;
   margin-bottom: 8px;
+  font-size: clamp(22px, 5vw, 32px);
+  word-break: break-word;
 }
 
 .subtitle {
@@ -41,6 +47,8 @@
   font-size: 0.95rem;
   outline: none;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-card input:focus {
@@ -59,6 +67,8 @@
   background: linear-gradient(90deg, #ffd700, #d4af37);
   color: #3d2616;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-card button:hover {
@@ -78,7 +88,7 @@
   cursor: pointer;
 }
 
-/* ✨ Animation */
+/* Animation */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -87,5 +97,37 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .login-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .login-card h1 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .login-card input {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .login-card button {
+    font-size: 0.95rem;
+    padding: 10px;
   }
 }
